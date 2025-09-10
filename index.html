@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+ 
+    <title>🎨Portfolio</title>
+    <meta name="description" content="Personal homepage and about me." />
+    <style>
+        :root {
+            --bg: #0f1724;
+            --card: #0b1220;
+            --muted: #94a3b8;
+            --accent: maroon;
+            --glass: rgba(255, 255, 255, 0.04);
+            --radius: 12px;
+            --fw-semi: 600;
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            background: linear-gradient(180deg, #071023 0%, #081126 60%);
+            color: #e6eef8;
+            cursor: pointer;
+            padding-top: 70px;
+            /* adjust based on navbar height */
+
+
+
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none
+        }
+
+        header {
+            backdrop-filter: blur(6px);
+            position: sticky;
+            top: 12px;
+            margin: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 14px;
+            border-radius: 14px;
+            background: var(--glass);
+            position: fixed;
+            /* instead of sticky */
+            top: 0;
+            /* stick to the top of the page */
+            width: 100%;
+            /* make it span full width */
+            z-index: 999;
+            /* stay above other content */
+
+
+        }
+
+        .brand {
+            display: flex;
+            gap: 12px;
+            align-items: center
+        }
+
+        .logo {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent), #2dd4bf);
+            display: inline-grid;
+            place-items: center;
+            font-weight: 700
+        }
+
+        nav {
+            display: flex;
+            gap: 14px;
+
+
+            /* ensures it stays above other content */
+
+        }
+
+        nav a {
+            color: white;
+        }
+
+        nav a:hover {
+            color: maroon;
+        }
+
+        .btn {
+            padding: 8px 12px;
+            border-radius: 10px;
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            cursor: pointer
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 28px auto;
+            padding: 24px
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 360px;
+            gap: 28px;
+            align-items: center
+        }
+
+        .card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            padding: 20px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.1rem
+        }
+
+        p.lead {
+            color: var(--muted);
+            margin-top: 10px;
+            font-size: 1rem
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            max-width: 320px;
+            border-radius: 14px;
+            object-fit: cover;
+            display: block
+        }
+
+        .actions {
+            margin-top: 18px;
+            display: flex;
+            gap: 10px
+        }
+
+        .primary {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 10px 14px;
+            border-radius: 10px
+        }
+
+        section {
+            margin-top: 26px
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px
+        }
+
+        .skill {
+            padding: 8px 10px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.03);
+            font-size: 0.9rem
+        }
+
+        footer {
+            margin: 36px 12px 60px;
+            color: var(--muted);
+            text-align: center
+        }
+
+        /* Projects section  */
+
+        .project-links a {
+            margin-right: 12px;
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .project-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width:900px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            section#about,
+            section#projects,
+            section#education {
+                grid-template-columns: 1fr
+            }
+
+            header {
+                margin: 10px;
+                padding: 8px
+            }
+        }
+
+        #intro {
+            /* font-size: 2rem; */
+            font-weight: 600;
+            color: #ffffff;
+            font-family: Inter, sans-serif;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="brand">
+            <div class="logo">YN</div>
+            <div>
+                <div style="font-weight:700">KhushbuHameed</div>
+                <div style="font-size:12px;color:var(--muted)">Designer • Developer • Creator</div>
+            </div>
+        </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="home" class="hero">
+            <div class="card">
+                <h3 id="intro">👋 Hi — </h3>
+                <p class="lead"> 💼 I’m a Full Stack and Android Developer who builds modern, scalable web and mobile
+                    applications.
+                    Skilled in JavaScript, React, Node.js and Java. I enjoy working across the entire development stack
+                    — from designing intuitive interfaces to developing robust backends and crafting high-quality
+                    Android apps. My focus is on writing clean, maintainable code, applying best practices, and
+                    delivering products that solve real problems.
+                    Passionate about technology and innovation, I thrive in collaborative environments and constantly
+                    explore new tools..!! </p>
+
+                <div class="actions">
+                    <a class="primary" href="#about">About Me</a>
+                    <a class="btn" href="#contact">Get in touch</a>
+                </div>
+
+                <hr style="margin:18px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)" />
+
+                <h3 style="margin:4px 0 8px 0">What I do</h3>
+                <ul style="margin:0 0 8px 18px;color:var(--muted)">
+                    <li>Frontend development (HTML, CSS, vanilla JS, modern frameworks)</li>
+                    <li>Backend development (Node.js, Express.js, JS, modern frameworks and Mongodb)</li>
+                    <li>Android & Mobile development (.Net Maui App, ASP Web Api, Xsml, C# SQL)</li>
+                    <li>UI/UX design & prototyping</li>
+                    <li>Performance optimization & accessibility</li>
+                </ul>
+            </div>
+
+            <aside class="card" style="display:flex;flex-direction:column;gap:12px;align-items:center">
+                <img class="avatar" src="profile.png" alt="Your avatar">
+                <div style="text-align:center">
+                    <div style="font-weight:700">Based in Gurugram, India</div>
+                    <div style="font-size:13px;color:var(--muted)">Available for freelance & full-time</div>
+                </div>
+            </aside>
+        </section>
+        <hr />
+        <section id="about">
+            <div class="card">
+                <h2>🎓About me____</h2>
+                <p style="color:var(--muted)">
+                    👋 Hi, I’m a Full Stack and Android Developer. I build web and mobile apps that are fast, easy to
+                    use, and reliable.
+                    I work with JavaScript, React, Node.js, and Java to create complete
+                    solutions — from the frontend to the backend to Android apps.
+                    I enjoy learning new technologies, solving problems, and turning ideas into useful products.
+                </p>
+
+                <h3 style="margin-top:14px">Experience</h3>
+                <ol style="color:var(--muted)">
+                    <li><strong>Software Development Intern</strong> — CodeSoft . Internship (2023–)</li>
+                    <li><strong>Teaching Assistant(TA) - Data Structure And Algorithms(Java)</strong> — CodingNinjas
+                        (2023–2024)</li>
+                    <li><strong>Android & Mobile developer || Java </strong> — Citykart (2025–2025)</li>
+                </ol>
+            </div>
+
+            <aside class="card">
+                <h3>Quick facts</h3>
+                <p style="color:var(--muted);margin:6px 0">🎓 Coding Bootcamp: 1 Year Full Stack Developer Program</p>
+                <p style="color:var(--muted);margin:6px 0">📚 Education: Bachelor Of Computer Application</p>
+                <p style="color:var(--muted);margin:6px 0">📚 Education: Intermediate</p>
+                <p style="color:var(--muted);margin:6px 0">📚 Education: High School</p>
+                <p style="color:var(--muted);margin:6px 0">🌍 Languages: English, Hindi</p>
+                <p style="color:var(--muted);margin:6px 0">⚡ Interests: Photography, Hiking, Coffee</p>
+            </aside>
+        </section>
+        <hr />
+        <section id="projects">
+            <div class="card">
+                <h2>💻Projects____</h2>
+                <div style="display:grid;gap:16px">
+                    <div class="card">
+                        <h3>⚡To-do Application</h3>
+                        <p style="color:var(--muted)">📌 Description:<br>
+                            A simple and responsive Todo Application that helps users manage daily tasks efficiently.
+                            Users can create, read, update, and delete (CRUD) tasks with ease.<br>
+                            🛠️ Tech Stack:<br>
+                            Frontend: HTML, CSS, JavaScript, React.js, Tailwind CSS<br>
+                            Functionality: Full CRUD operations with clean UI and smooth interactions
+                            .</p>
+                        <div class="project-links">
+                            💻 <a href="https://github.com/khushbuhameed/todolist-react.git" target="_blank">GitHub</a>
+                            🔗 <a href="https://khushbuhameed.github.io/todolist-react/" target="_blank">Live Demo</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>⚡Password Manager</h3>
+                        <p style="color:var(--muted)">
+                            📌 Description:<br>
+                            A secure Password Manager web app that lets users store, update, and manage passwords
+                            safely. Includes authentication and encryption for data security.<br>
+                            🛠️ Tech Stack:<br>
+                            Frontend: React.js, Tailwind CSS<br>
+                            Backend: Node.js, Express.js<br>
+                            Database: MongoDB<br>
+                            Functionality: Full CRUD operations, user authentication, encrypted password storage
+                        </p>
+                        <div class="project-links">
+                            💻 <a href="https://github.com/khushbuhameed/passwordmanager.git" target="_blank">GitHub</a>
+                            🔗<a href="https://yourprojectdemo.com" target="_blank">Live Demo</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>⚡ Spotify Music App</h3>
+
+                        <p style="color:var(--muted)">
+                            📌 Description:
+                            A responsive Spotify Music App clone that allows users to browse, play, and manage
+                            playlists. It features a clean UI and smooth interactions.<br>
+
+                            🛠️ Tech Stack:<br>
+
+                            Frontend: React.js, Tailwind CSS<br>
+
+                            Backend: Node.js (optional, for user data)<br>
+
+                            Functionality: Browse songs, create playlists, play/pause music, basic CRUD operations for
+                            playlists
+                        </p>
+                        <div class="project-links">
+                            💻 <a href="https://github.com/khushbuhameed/Spotify-Clone.git" target="_blank">GitHub</a>
+                            🔗 <a href="https://khushbuhameed.github.io/Spotify-Clone/" target="_blank">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <hr />
+        <section id="education">
+            <div class="card">
+                <h2>📚Education____</h2>
+                <ul style="color:var(--muted)">
+                    <li><strong>Full Stack Development || Node.js & Mongodb</strong> — CodingNinjas (2022–2023)</li>
+                    <li><strong>Bachelor Of Computer Application</strong> — Dr. Ram Manoher Lohia Avadh University ||
+                        Faizabad (2017–2020)</li>
+                    <li><strong>Intermediate In Science</strong> — Gulaam Rasool Inter Collage (2015–2016)</li>
+                    <li><strong>High School</strong> — Gulaam Rasool Inter Collage (2013–2014)</li>
+                </ul>
+            </div>
+        </section>
+        <hr />
+        <section id="skills">
+            <div class="card">
+                <h2>🛠️ Skills____</h2>
+                <div class="skills">
+                    <span class="skill">HTML</span>
+                    <span class="skill">CSS</span>
+                    <span class="skill">JavaScript</span>
+                    <span class="skill">React</span>
+                    <span class="skill">Accessibility</span>
+                    <span class="skill">Design Systems</span>
+                    <span class="skill">Node.js</span>
+                    <span class="skill">UI/UX Design</span>
+                    <span class="skill">Frontend Development</span>
+                    <span class="skill">Backend Development</span>
+                    <span class="skill">HTML</span>
+                    <span class="skill">CSS</span>
+                    <span class="skill">JavaScript</span>
+                    <span class="skill">Tailwind CSS</span>
+                    <span class="skill">Android Development</span>
+                    <span class="skill">Data Struckture and Algorithms</span>
+                    <span class="skill">.Net Maui App</span>
+                    <span class="skill">Sql server express</span>
+                    <span class="skill">python</span>
+                    <span class="skill">Swagger API</span>
+                    <span class="skill">Mongodb</span>
+                    <span class="skill">Figma</span>
+                    <span class="skill">Redux.js</span>
+                    <span class="skill">Document Object Model(DOM)</span>
+                    <span class="skill">Bootstrap</span>
+                    <span class="skill">Object Oriented Programming(OOPS)</span>
+                </div>
+            </div>
+        </section>
+        <hr />
+        <section id="contact">
+            <div class="card">
+                <h2>📧 Contact____</h2>
+                <p style="color:var(--muted)">Want to work together? Send me a message.</p>
+                <form onsubmit="event.preventDefault();alert('Demo form — replace with your backend')">
+                    <label style="display:block;margin-top:8px;">Name</label>
+                    <input required
+                        style="width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit;border: 1px solid white;border-radius: 5px;">
+                    <label style="display:block;margin-top:8px;">Email</label>
+                    <input type="email" required
+                        style="width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit;border: 1px solid white;border-radius: 5px;">
+                    <label style="display:block;margin-top:8px;">Message</label>
+                    <textarea required
+                        style="width:100%;min-height:120px;padding:10px;margin-top:6px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit;border: 1px solid white;border-radius: 5px;"></textarea>
+                    <div style="margin-top:10px"><button class="primary" type="submit">Send message</button></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        © <span id="year"></span> KhushbuHameed — Built with ❤️ • <a href="#">Portfolio</a>
+    </footer>
+
+    <script>
+        // small helpers
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            })
+        })
+
+
+
+
+        const text = "I am Khushbu Hameed...!! & I am a Full Stack and Android Developer.";
+        const intro = document.getElementById("intro");
+        let index = 0;
+        let forward = true; // track typing direction
+
+        function type() {
+            if (forward) {
+                if (index < text.length) {
+                    intro.innerHTML += text.charAt(index);
+                    index++;
+                    setTimeout(type, 100); // typing speed
+                } else {
+                    forward = false;
+                    setTimeout(type, 1500); // pause at full text
+                }
+            } else {
+                if (index > 0) {
+                    intro.innerHTML = text.substring(0, index - 1);
+                    index--;
+                    setTimeout(type, 50); // deleting speed
+                } else {
+                    forward = true;
+                    setTimeout(type, 500); // pause before typing again
+                }
+            }
+        }
+
+        window.onload = type;
+
+
+
+    </script>
+
+</body>
+
+</html>
