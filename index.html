@@ -221,11 +221,52 @@
             font-family: Inter, sans-serif;
             white-space: pre-wrap;
         }
+/*       change here */
+        /* Mobile adjustments */
+@media (max-width: 768px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px 12px; /* reduce padding */
+  }
+
+  nav {
+    display: none; /* hide normal nav on mobile, replace with hamburger icon */
+  }
+
+  /* Add space for mobile hero section */
+  .hero {
+    margin-top: 12px; /* reduce top spacing */
+  }
+
+  /* Example hamburger icon (can be placed in HTML) */
+  .hamburger {
+    display: block;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .hamburger div {
+    height: 3px;
+    background: white;
+    margin: 5px 0;
+    border-radius: 2px;
+  }
+}
+
+/* Hide hamburger on desktop */
+.hamburger {
+  display: none;
+}
+/* change here end */
+        
     </style>
 </head>
 
 <body>
-    <header>
+    <header class="hamburger">
         <div class="brand">
             <div class="logo">YN</div>
             <div>
@@ -496,5 +537,6 @@
     </script>
 
 </body>
+
 
 </html>
