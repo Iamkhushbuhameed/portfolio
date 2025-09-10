@@ -4,9 +4,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
- 
+
     <title>🎨Portfolio</title>
     <meta name="description" content="Personal homepage and about me." />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+
     <style>
         :root {
             --bg: #0f1724;
@@ -26,15 +28,12 @@
         html,
         body {
             height: 100%;
-            margin: 0;
+            margin: 0%;
             background: linear-gradient(180deg, #071023 0%, #081126 60%);
             color: #e6eef8;
             cursor: pointer;
-            padding-top: 70px;
+            /* padding-top: 70px; */
             /* adjust based on navbar height */
-
-
-
         }
 
         a {
@@ -222,7 +221,101 @@
             white-space: pre-wrap;
         }
 
-        
+        @media (max-width: 768px) {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .container {
+                margin: 0 auto;
+                /* remove big 28px margin */
+                padding: 16px;
+                /* smaller padding for phone */
+            }
+
+            .hero {
+                margin-top: 80px;
+                /* only enough space for navbar */
+            }
+
+            header {
+                margin: 0;
+                border-radius: 0;
+                /* make navbar full-width flush */
+            }
+        }
+
+        /* Navbar fixed at top */
+        header {
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 10px 16px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--card);
+            z-index: 1000;
+        }
+
+        /* Hide nav by default */
+        nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            /* directly under navbar */
+            left: 0;
+            right: 0;
+            background: var(--card);
+            flex-direction: column;
+            gap: 12px;
+            padding: 16px;
+        }
+
+        /* Show nav when toggled */
+        nav.show {
+            display: flex;
+        }
+
+        /* Show hamburger on mobile */
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 28px;
+            height: 22px;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            height: 3px;
+            background: white;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hamburger → X animation */
+        .hamburger.active div:nth-child(1) {
+            transform: rotate(50deg) translateY(14px);
+        }
+
+        .hamburger.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active div:nth-child(3) {
+            transform: rotate(-50deg) translateY(-15px);
+        }
+
+        /* Push hero section down */
+        .hero {
+            margin-top: 100px;
+        }
+
+   
+
+        /* Change here end */
     </style>
 </head>
 
@@ -243,6 +336,13 @@
             <a href="#skills">Skills</a>
             <a href="#contact">Contact</a>
         </nav>
+        <!-- change here! -->
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <!-- change here end -->
     </header>
 
     <main class="container">
@@ -490,17 +590,29 @@
                 }
             }
         }
-
         window.onload = type;
 
 
+        // Select elements
+        const hamburger = document.querySelector(".hamburger");
+        const nav = document.querySelector("nav");
 
+        // Toggle menu on click
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            nav.classList.toggle("show");
+        });
+
+        // Close menu after clicking a link
+        document.querySelectorAll("nav a").forEach(link => {
+            link.addEventListener("click", () => {
+                hamburger.classList.remove("active");
+                nav.classList.remove("show");
+            });
+        });
+        
     </script>
 
 </body>
 
-
 </html>
-
-
-
