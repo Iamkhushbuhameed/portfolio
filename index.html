@@ -222,7 +222,7 @@
             white-space: pre-wrap;
         }
 /*       change here */
-        /* Mobile adjustments */
+    /* Mobile adjustments */
 @media (max-width: 768px) {
   header {
     flex-direction: row;
@@ -231,35 +231,31 @@
   }
 
   nav {
-    display: none; /* hide normal nav on mobile, replace with hamburger icon */
+    display: none; /* hide normal nav on mobile */
   }
 
-  /* Add space for mobile hero section */
-  .hero {
-    margin-top: 12px; /* reduce top spacing */
-  }
-
-  /* Example hamburger icon (can be placed in HTML) */
+  /* Show hamburger on mobile */
   .hamburger {
-    display: block;
+    display: flex; /* was display:none */
+    flex-direction: column;
+    justify-content: space-between;
     width: 28px;
-    height: 28px;
+    height: 22px;
     cursor: pointer;
-    flex-shrink: 0;
   }
 
   .hamburger div {
     height: 3px;
     background: white;
-    margin: 5px 0;
     border-radius: 2px;
+  }
+
+  /* Reduce hero top spacing */
+  .hero {
+    margin-top: 0px; /* reduce top spacing on mobile */
   }
 }
 
-/* Hide hamburger on desktop */
-.hamburger {
-  display: none;
-}
 /* change here end */
         
     </style>
@@ -546,4 +542,5 @@
 
 
 </html>
+
 
